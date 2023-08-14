@@ -59,7 +59,7 @@ static inline void cond_signal(cond_t *cond, mutex_t *mutex)
     fetch_add(&cond->seq, 1, relaxed);
 
     // EEEE(&cond->seq, 1);
-    futex_wait(&cond->seq, 1);
+    futex_wake(&cond->seq, 1);
 }
 
 static inline void cond_broadcast(cond_t *cond, mutex_t *mutex)
