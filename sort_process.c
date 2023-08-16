@@ -4,7 +4,7 @@
 #include <sys/time.h>
 #include <unistd.h>
 
-#include "qsort_mt.h"
+#include "qsort_ft.h"
 
 #ifndef ELEM_T
 #define ELEM_T uint32_t
