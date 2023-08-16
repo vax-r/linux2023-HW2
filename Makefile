@@ -32,3 +32,11 @@ check: $(ALL)
 clean:
 	$(RM) $(ALL)
 .PHONY: clean
+
+IMAGE = linux-sort
+
+docker-build:
+	sudo docker build -t $(IMAGE) . --no-cache
+
+docker-run:
+	sudo docker run -it -v $(PWD):/code $(IMAGE) /bin/bash

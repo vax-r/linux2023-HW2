@@ -75,7 +75,7 @@ static inline void mutex_unlock(mutex_t *mutex)
     int state = exchange(&mutex->state, 0, release);
     if (state & MUTEX_SLEEPING)
         futex_wake(&mutex->state, 1);
-        // FFFF(&mutex->state, 1);
+    // FFFF(&mutex->state, 1);
 }
 
 #endif

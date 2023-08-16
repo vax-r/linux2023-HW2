@@ -42,7 +42,6 @@ static inline void cond_wait(cond_t *cond, mutex_t *mutex)
             return;
         }
         spin_hint();
-        
     }
 
     futex_wait(&cond->seq, seq);
